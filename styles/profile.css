@@ -1,0 +1,404 @@
+
+.profilepage_topbar {
+  background-color: #4361ee;
+  width: 100%;
+  height: 100px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profilepage_topbar .logo {
+  margin-left: 150px;
+  z-index: 1000;
+}
+
+.profilepage_topbar .summary {
+  margin-right: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  z-index: 1000;
+}
+
+.summary div > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Nunito-Black', sans-serif;
+}
+
+.summary div ~ p {
+  margin-top: 10px;
+  font-size: 12px;
+  font-family: 'Nunito-Regular', sans-serif;
+}
+
+.summary .thumbnail {
+  border-radius: 100%;
+  width: 64px;
+  height: 64px;
+  background-image: url("../public/images/profile_photo.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.profile_bgleft {
+  position: absolute;
+  left: 0;
+  z-index: 2;
+}
+
+.profile_bgright {
+  position: absolute;
+  right: 0;
+  z-index: 2;
+}
+
+.profile_bgtop {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.profilepage_search {
+  background-color: #f5f7ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 22px 0;
+}
+
+.profilepage_resume {
+  width: 1140px;
+  margin: 30px auto 50px auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 100px;
+  color: #6b7998;
+}
+
+.profilepage_resume .resume_aside {
+  font-family: 'Nunito-Regular', sans-serif;
+}
+
+.resume_aside .profile_picture {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  background-color: #eff1f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile_picture .profile_picture_edit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 64px;
+  height: 66px;
+  display: flex;
+  justify-content: center;
+  padding-top: 14px;
+  background: url('../public/images/resumepic_bgleft.png');
+  background-position: center;
+  background-size: contain;
+}
+
+.resume_aside .profile_personal_infos {
+  margin-top: 20px;
+  padding-bottom: 30px;
+  border-bottom: solid 1px rgba(107, 121, 152, 0.3);
+}
+
+.profile_personal_infos .fullname {
+  font-size: 24px;
+  color: #4361ee;
+  font-family: 'Nunito-SemiBold', sans-serif;
+}
+
+.profile_personal_infos > a {
+  font-family: 'Nunito-Bold', sans-serif;
+}
+
+.profile_personal_infos p:not(:first-child) {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.profile_personal_infos .download_resume {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  color: #0d1822;
+}
+
+.download_resume a {
+  color: inherit;
+  font-size: 12px;
+}
+
+.download_resume img {
+  margin-right: 10px;
+}
+
+.resume_aside .social_media {
+  padding: 30px 0;
+  border-bottom: solid 1px rgba(107, 121, 152, 0.3);
+}
+
+.social_media > p {
+  font-size: 18px;
+  color: #4361ee;
+  font-weight: bolder;
+  font-family: 'Nunito-ExtraBold', sans-serif;
+}
+
+.social_media > a {
+  font-family: 'Nunito-Bold', sans-serif;
+}
+
+.social_media > ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.social_media > ul li {
+  height: 20px;
+}
+
+.social_media > ul li:not(:last-child) {
+  margin-right: 10px;
+}
+
+.resume_aside .documents,
+.resume_aside .saved_searches,
+.resume_aside .applications {
+  padding: 30px 0;
+  border-bottom: solid 1px rgba(107, 121, 152, 0.3);
+}
+
+.documents > p,
+.saved_searches > p,
+.applications > p {
+  font-size: 18px;
+  color: #4361ee;
+  font-weight: bolder;
+  font-family: 'Nunito-ExtraBold', sans-serif;
+}
+
+.documents > a,
+.applications > a {
+  font-family: 'Nunito-Bold', sans-serif;
+}
+
+.documents > ul,
+.saved_searches > ul,
+.applications > ul {
+  list-style: none;
+  padding: 20px 0;
+}
+
+.documents > ul li:not(:last-child),
+.saved_searches > ul li:not(:last-child),
+.applications > ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.documents > ul li,
+.saved_searches > ul li,
+.applications > ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.documents > ul li p,
+.saved_searches > ul li p,
+.applications > ul li p {
+  flex: 1;
+  margin-left: 1rem;
+}
+
+/******************************************************/
+
+.resume_main > p {
+  font-size: 32px;
+  font-weight: 800;
+  color: #5b6987;
+  margin-bottom: 15px;
+  font-family: 'Nunito-ExtraBold', sans-serif;
+}
+
+.resume_main .description,
+.resume_main .experiences,
+.resume_main .educations,
+.resume_main .certificates,
+.resume_main .abilities {
+  padding: 15px 0;
+}
+
+.description .description_topbar,
+.experiences .experiences_topbar,
+.educations .educations_topbar,
+.certificates .certificates_topbar,
+.abilities .abilities_topbar  {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: solid 1px rgba(107, 121, 152, 0.3);
+}
+
+.description > p,
+.experiences > p,
+.educations > p,
+.certificates > p,
+.abilities > p {
+  margin-top: 15px;
+}
+
+.description > p {
+  font-family: 'Nunito-Regular', sans-serif;
+}
+
+.description_topbar > p {
+  font-size: 24px;
+  color: #4361ee;
+  font-family: 'Nunito-ExtraBold', sans-serif;
+}
+
+.experiences_topbar > p,
+.educations_topbar > p,
+.certificates_topbar > p,
+.abilities_topbar > p {
+  font-size: 24px;
+  color: #5b6987;
+  font-family: 'Nunito-ExtraBold', sans-serif;
+}
+
+.description_topbar > a,
+.experiences_topbar > a,
+.educations_topbar > a,
+.certificates_topbar > a,
+.abilities_topbar > a {
+  text-decoration: none;
+  color: #6b7998;
+  font-family: 'Nunito-Bold', sans-serif;
+}
+
+.experiences > ul,
+.educations > ul,
+.certificates > ul {
+  list-style: none;
+}
+
+.abilities > ul {
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 1rem;
+  row-gap: 10px;
+}
+
+.abilities > ul > .ability {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+}
+
+.experience_item,
+.education_item,
+.certificate_item {
+  margin-top: 15px;
+  font-family: 'Nunito-SemiBold', sans-serif;
+}
+
+.experience_item p:first-child,
+.education_item p:first-child,
+.certificate_item p:first-child {
+  font-size: 24px;
+  color: #4361ee;
+  margin-bottom: 5px;
+  font-family: 'Nunito-ExtraBold', sans-serif;
+}
+
+.experience_item p:last-child {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-family: 'Nunito-Regular', sans-serif;
+}
+
+.experience_item p:nth-child(2),
+.experience_item p:nth-child(3),
+.education_item p:nth-child(2),
+.education_item p:nth-child(3),
+.certificate_item p:nth-child(2),
+.certificate_item p:nth-child(3) {
+  margin-bottom: 2px;
+}
+
+.experience_item p:nth-child(2) {
+  font-size: 18px;
+  color: #4361ee;
+  font-family: 'Nunito-Bold', sans-serif;
+}
+
+@media only screen and (max-width: 1200px) {
+  .profilepage_main {
+    max-height: calc(100vh - 300px);
+    overflow: hidden;
+    overflow: scroll;
+  }
+
+  .profilepage_resume {
+    margin-inline: 50px;
+  }
+
+  .profilepage_topbar {
+    height: 200px;
+  }
+
+  .profilepage_topbar {
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .profilepage_topbar .logo {
+    margin-top: 60px;
+    margin-left: 0;
+  }
+
+  .profilepage_topbar .summary {
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .profilepage_main {
+    max-height: calc(100vh - 362px);
+  }
+
+  .profile_bgleft {
+    width: 96px;
+  }
+
+  .profile_bgright {
+    height: 48px;
+  }
+
+  .profilepage_resume {
+    margin-inline: 25px;
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "profile": {
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et\n  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\n  ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu\n  fugiat nulla pariatur.",
+    "experiences": {
+      "sectionName": "Deneyim",
+      "items": [
+        {
+          "title": "Founder",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et\n        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\n        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu\n        fugiat nulla pariatur.",
+          "location": "Ümraniye - İstanbul/Turkey",
+          "date": "February 2014 - Present (6 Years , 10 Months)",
+          "establishment": "Neyasis Technology"
+        },
+        {
+          "title": "Software Development Manager",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et\n        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\n        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu\n        fugiat nulla pariatur.",
+          "location": "Armonk- New York/ABD",
+          "date": "Jully 2011 - January 2014  (2 Years, 6 Months)",
+          "establishment": "IBM"
+        }
+      ]
+    },
+    "educations": {
+      "sectionName": "Eğitim",
+      "items": [
+        {
+          "establishment": "Bahçeşehir Üniversitesi",
+          "title": "Master Degree",
+          "department": "Computer & Information Scienses",
+          "dateRange": "2015-2019"
+        },
+        {
+          "establishment": "Boğaziçi Üniversitesi",
+          "title": "Bachelor’s Degree",
+          "department": "Political Science and International Relations",
+          "dateRange": "2010-2015"
+        }
+      ]
+    },
+    "certificates": {
+      "sectionName": "Sertifikalar",
+      "items": [
+        {
+          "name": "MCP (Microsoft Certified Professional)",
+          "takenFrom": "Microsoft",
+          "date": "January 2015"
+        }
+      ]
+    },
+    "abilities": {
+      "sectionName": "Yetenekler",
+      "items": [
+        {
+          "name": "C#,.Net",
+          "amountOfExperience": "10 Years"
+        },
+        {
+          "name": "Swift",
+          "amountOfExperience": "5 Years"
+        },
+        {
+          "name": "React",
+          "amountOfExperience": "3 Years"
+        }
+      ]
+    },
+    "interests": {
+      "sectionName": "İlgi Alanları",
+      "items": [
+        "Boating / Sailing",
+        "Snowboarding",
+        "Windsurfing"
+      ]
+    }
+  },
+  "personalInfos": {
+    "fullName": "Nesil AKSOY",
+    "heading": "UX Designer",
+    "location": "Türkiye, İstanbul, Sarıyer",
+    "email": "eray_karakullukcu.neyasis.com",
+    "mobileNumber": "+90 555 66 44"
+  }
+}

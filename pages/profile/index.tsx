@@ -1,12 +1,8 @@
 import SearchInput from '@/components/SearchInput'
-
-const personalInfos = {
-  fullName: 'Nesil AKSOY',
-  heading: 'UX Designer',
-  location: 'Türkiye, İstanbul, Sarıyer',
-  email: 'eray_karakullukcu.neyasis.com',
-  mobileNumber: '+90 555 66 44',
-}
+import { fetchProfile } from '@/features/profile/actions';
+import { fetchPersonalInfos } from '@/features/user/actions';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 const socialMedias = [
   { platform: 'linkedin', link: '#' },
@@ -29,80 +25,18 @@ const savedSearches = ['Neyasis Tech', 'Apple']
 
 const myApplications = ['Neyasis Tech.']
 
-const profile = {
-  description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-  ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-  fugiat nulla pariatur.`,
-  experiences: {
-    sectionName: 'Deneyim',
-    items: [
-      {
-        title: 'Founder',
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-        fugiat nulla pariatur.`,
-        location: 'Ümraniye - İstanbul/Turkey',
-        date: 'February 2014 - Present (6 Years , 10 Months)',
-        establishment: 'Neyasis Technology',
-      },
-      {
-        title: 'Software Development Manager',
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-        fugiat nulla pariatur.`,
-        location: 'Armonk- New York/ABD',
-        date: 'Jully 2011 - January 2014  (2 Years, 6 Months)',
-        establishment: 'IBM',
-      },
-    ],
-  },
-  educations: {
-    sectionName: 'Eğitim',
-    items: [
-      {
-        establishment: 'Bahçeşehir Üniversitesi',
-        title: 'Master Degree',
-        department: 'Computer & Information Scienses',
-        dateRange: '2015-2019',
-      },
-      {
-        establishment: 'Boğaziçi Üniversitesi',
-        title: 'Bachelor’s Degree',
-        department: 'Political Science and International Relations',
-        dateRange: '2010-2015',
-      },
-    ],
-  },
-  certificates: {
-    sectionName: 'Sertifikalar',
-    items: [
-      {
-        name: 'MCP (Microsoft Certified Professional)',
-        takenFrom: 'Microsoft',
-        date: 'January 2015',
-      },
-    ],
-  },
-  abilities: {
-    sectionName: 'Yetenekler',
-    items: [
-      { name: 'C#,.Net', amountOfExperience: '10 Years' },
-      { name: 'Swift', amountOfExperience: '5 Years' },
-      { name: 'React', amountOfExperience: '3 Years' },
-    ],
-  },
-  interests: {
-    sectionName: 'İlgi Alanları',
-    items: ['Boating / Sailing', 'Snowboarding', 'Windsurfing'],
-  },
-}
+function Profile() {
+  const dispatch = useDispatch();
+  // const { fullName, heading, location, email, mobileNumber } = personalInfos;
+  const profileInfo = useSelector((state) => state.profile);
+  const { fullName, heading, location, email, mobileNumber } = useSelector((state) => state.user);
 
-export default function Profile() {
-  const { fullName, heading, location, email, mobileNumber } = personalInfos
-  return (
+  useEffect(() => {
+    dispatch(fetchProfile());
+    dispatch(fetchPersonalInfos());
+  }, [])
+
+  return profileInfo && (
     <>
       <header>
         <div className='profilepage_topbar'>
@@ -247,7 +181,7 @@ export default function Profile() {
               <p>Başvurularım</p>
               <ul>
                 {myApplications.map((app) => (
-                  <li>
+                  <li key={app}>
                     <img
                       src={`/icons/application.png`}
                       alt={app}
@@ -274,60 +208,63 @@ export default function Profile() {
                 <p>Profesyonel Bakış</p>
                 <a href='#'>Düzenle</a>
               </div>
-              <p>{profile.description}</p>
+              <p>{profileInfo.description}</p>
             </div>
             <div className='experiences'>
               <div className='experiences_topbar'>
-                <p>{profile.experiences.sectionName}</p>
+                <p>{profileInfo?.experiences?.sectionName}</p>
                 <a href='#'>Düzenle</a>
               </div>
               <ul>
-                {profile.experiences.items.map((item) => (
-                  <ExperienceItem {...item} />
+                {profileInfo?.experiences?.items.map((item) => (
+                  <ExperienceItem key={item.title} {...item} />
                 ))}
               </ul>
             </div>
             <div className='educations'>
               <div className='educations_topbar'>
-                <p>{profile.educations.sectionName}</p>
+                <p>{profileInfo?.educations?.sectionName}</p>
                 <a href='#'>Düzenle</a>
               </div>
               <ul>
-                {profile.educations.items.map((education) => (
-                  <EducationItem {...education} />
+                {profileInfo?.educations?.items.map((education) => (
+                  <EducationItem key={education.title} {...education} />
                 ))}
               </ul>
             </div>
             <div className='certificates'>
               <div className='certificates_topbar'>
-                <p>{profile.certificates.sectionName}</p>
+                <p>{profileInfo?.certificates?.sectionName}</p>
                 <a href='#'>Düzenle</a>
               </div>
               <ul>
-                {profile.certificates.items.map((certificate) => (
-                  <CertificateItem {...certificate} />
+                {profileInfo?.certificates?.items.map((certificate) => (
+                  <CertificateItem 
+                    key={`${certificate.name},${certificate.date}`} 
+                    {...certificate} 
+                  />
                 ))}
               </ul>
             </div>
             <div className='abilities'>
               <div className='abilities_topbar'>
-                <p>{profile.abilities.sectionName}</p>
+                <p>{profileInfo?.abilities?.sectionName}</p>
                 <a href='#'>Düzenle</a>
               </div>
               <ul>
-                {profile.abilities.items.map((ability) => (
-                  <Ability {...ability} />
+                {profileInfo?.abilities?.items.map((ability, index) => (
+                  <Ability key={index} {...ability} />
                 ))}
               </ul>
             </div>
             <div className='abilities'>
               <div className='abilities_topbar'>
-                <p>{profile.interests.sectionName}</p>
+                <p>{profileInfo?.interests?.sectionName}</p>
                 <a href='#'>Düzenle</a>
               </div>
               <ul>
-                {profile.interests.items.map((interest) => (
-                  <Interest interest={interest} />
+                {profileInfo?.interests?.items.map((interest) => (
+                  <Interest key={interest} interest={interest} />
                 ))}
               </ul>
             </div>
@@ -337,6 +274,8 @@ export default function Profile() {
     </>
   )
 }
+
+export default Profile;
 
 const ExperienceItem = ({
   title,
